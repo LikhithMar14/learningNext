@@ -34,12 +34,12 @@ export function WobbleCardDemo() {
             Because finding anything in this mess is practically impossible. And good luck trying to share any of it with anyone, especially on WhatsApp. 
         </p>
       </WobbleCard>
-      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 lg:col-span-3 font-sans bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
         <div className="max-w-sm">
-          <h2 className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+          <h2 className="max-w-sm md:max-w-lg font-sans  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
             "Experience the Power"? More like "Embrace the Frustration."
           </h2>
-          <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
+          <p className="mt-4 max-w-[26rem] text-left  font-snas text-neutral-200 ">
             Because this is definitely not going to make your life easier. And trying to share something with your friends on WhatsApp? Forget about it. You'll just end up sending them a screenshot of your disorganized notes. 
           </p>
         </div>

@@ -5,14 +5,13 @@ import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-geist-mono",  
   subsets: ["latin"],
 });
 
@@ -27,29 +26,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning >
-      
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        
-      
-        <div className="max-w-full h-full">
-
+        <div className="max-w-full min-h-screen flex flex-col">
           <ThemeProvider 
             attribute="class" 
-            defaultTheme='dark' 
+            defaultTheme="dark" 
             enableSystem 
-            disableTransitionOnChange 
+            disableTransitionOnChange
           >
-            <TracingBeam>
-            <Navbar/>
-            {children}
+            <TracingBeam className="px-6 flex-1">
+              <Navbar />
+              {children}
             </TracingBeam>
-
           </ThemeProvider>
         </div>
-     
-</body>
-      
+      </body>
     </html>
   );
 }

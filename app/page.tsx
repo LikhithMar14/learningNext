@@ -7,8 +7,8 @@ import { WobbleCardDemo } from "@/components/wobblecardDemo";
 export default function Home() {
   const words = " Brainly isn’t just a tool—it’s your digital second brain. Capture ideas, connect thoughts, and create clarity like never before. Welcome to the future of thinking."
   return (
-    <div className="m-4 p-2 flex flex-col items-center space-y-10">
-      <BackgroundBeamsWithCollision className="rounded-none flex flex-col items-center">
+    <div className=" flex flex-col items-center space-y-10">
+      <BackgroundBeamsWithCollision className="rounded-xl flex flex-col items-center h-screen">
         <h2 className="text-2xl md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
           <Cover>Unlock the Power of Your Mind</Cover>
         </h2>
@@ -25,7 +25,7 @@ export default function Home() {
         
       </BackgroundBeamsWithCollision>
     
-      <div className="h-[40rem] flex items-center justify-center mx-5">
+      <div className="h-[40rem] flex items-center justify-center p-7">
       <TextHoverEffect text="BRAINLY" duration={0}/>
     </div>
     <WobbleCardDemo/>

@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -9,13 +9,13 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Link,
   Button,
   Switch,
 } from "@nextui-org/react";
 import { Brain, MoonIcon, SunIcon } from "lucide-react";
+import Link from "next/link";
 import ThemeToggler from "./theme-toggler";
-
+import router, { useRouter } from "next/router";
 
 export const AcmeLogo = () => {
   return (
@@ -27,37 +27,48 @@ export const AcmeLogo = () => {
         fillRule="evenodd"
       />
     </svg>
-  );    
+  );
 };
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = [
-    "Profile",
-    "Log Out",
-  ];
+  const menuItems = ["Profile", "Log Out"];
 
   function toggleTheme(isSelected: boolean): void {
     throw new Error("Function not implemented.");
   }
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} isBlurred = {true}>
+    <Navbar onMenuOpenChange={setIsMenuOpen} isBlurred={true}>
       <NavbarContent>
         <NavbarBrand>
-        <Brain size={40} strokeWidth={1.5} absoluteStrokeWidth fill="orange" />
-          <p className={`hidden bg-gradient-to-b from-pink-400
-             to-pink-700 bg-clip-text text-3xl ml-3 font-black tracking-tighter text-transparent min-[410px]:block`}>Brainly</p>
+          <NavbarBrand>
+            <Link passHref
+              href="/"
+              className=" flex items-center space-x-3 p-0 m-0 bg-transparent border-none cursor-pointer "
+            >
+              <Brain
+                size={40}
+                strokeWidth={1.5}
+                absoluteStrokeWidth
+                fill="orange"
+              />
+              <p className="hidden bg-gradient-to-b from-pink-400 to-pink-700 bg-clip-text text-3xl ml-3 font-black tracking-tighter text-transparent min-[410px]:block">
+                Brainly
+              </p>
+            </Link>
+          </NavbarBrand>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify="end">
-        <ThemeToggler/>
-        <NavbarItem >
-            <Button as = {Link} color = "primary" href = "/login" variant = "solid">
-                Login
-            </Button>
-
+        <div className="hidden lg:flex md:flex">
+          <ThemeToggler/>
+        </div>
+        <NavbarItem>
+          <Button as={Link} color="primary" href="/login" variant="solid">
+            Login
+          </Button>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href="/signup" variant="flat">
@@ -65,8 +76,6 @@ export default function App() {
           </Button>
         </NavbarItem>
       </NavbarContent>
-
     </Navbar>
   );
 }
-
